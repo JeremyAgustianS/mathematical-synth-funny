@@ -3,6 +3,7 @@
 #include <vector>
 #include <cmath>
 #include <cstdint>
+#include <generate/generate.h>
 using namespace std;
 
 // takes vector array -> wav 44k 
@@ -61,10 +62,10 @@ void export_wav(const string& filename, const vector<float> audio_data, int samp
     return;
 }
 
-// 
+// bruh
 vector<float> import_wav(){}
 
-
+//test function
 vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
     vector<float> data;
     constexpr double pi = acos(-1.0); 
@@ -77,7 +78,8 @@ vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
 
 int main(){
 
-    // vector<float> test = generate_sin(0.5, 100, 44000, 4);
-    // export_wav("test.wav", test);
+    vector<float> test = generate_zeta_audio(0.5, 100);
+    export_wav("test.wav", test);
+
 
 }
