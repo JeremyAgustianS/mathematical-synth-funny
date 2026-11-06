@@ -78,7 +78,7 @@ vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
 
 int main(){
 
-    vector<float> test = generate_zeta_audio(0.5, 100);
+    vector<float> test = generate_funny_zeta(0.5, 440, 44100, 20);
     export_wav("test.wav", test);
 
 
