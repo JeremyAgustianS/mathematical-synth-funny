@@ -1,0 +1,2 @@
+# mathematical-synth-funny
+funny
