@@ -36,3 +36,13 @@ void process_range(vector<float> &audio_data, float amp = 1){
 
     return ;
 }
+
+vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
+    vector<float> data;
+    double pi = acos(-1.0); 
+    for(int i = 0; i < (rate*dur); i++){
+        float a = amplitude * sin((2 * pi * freq) * (i/rate));
+        data.push_back(a);
+    }
+    return data;
+}

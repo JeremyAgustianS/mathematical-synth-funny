@@ -65,26 +65,33 @@ void export_wav(const string& filename, const vector<float> audio_data, int samp
 // bruh
 vector<float> import_wav(){}
 
-//test function
-vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
-    vector<float> data;
-    double pi = acos(-1.0); 
-    for(int i = 0; i < (rate*dur); i++){
-        float a = amplitude * sin((2 * pi * freq) * (i/rate));
-        data.push_back(a);
-    }
-    return data;
+
+
+vector<float> mix(const vector<float>& a, const vector<float>& b, float g1 = 0.5, float g2 = 0.5) {
+    size_t n = min(a.size(), b.size());
+    vector<float> out(n);
+    for (size_t i = 0; i < n; ++i)
+        out[i] = g1 * a[i] + g2 * b[i];
+    return out;
 }
 
 int main(){
 
-    vector<float> test = generate_weierstrass(0.5, 440, 44100, 5);
+    vector<float> test = generate_weierstrass(0.5, 130, 44100, 5);
     export_wav("test.wav", test);
 
-    vector<float> test2 = generate_weierstrass(0.5, 220, 44100, 5);
-    export_wav("test2.wav", test2);
+    // vector<float> test2 = generate_weierstrass(0.5, 220, 44100, 5);
+    // export_wav("test2.wav", test2);
 
-    vector<float> test3 = generate_weierstrass(0.5, 880, 44100, 5);
-    export_wav("tes3.wav", test3);
+    // vector<float> test3 = generate_weierstrass(0.5, 880, 44100, 5);
+    // export_wav("tes3.wav", test3);
+
+    // vector<float> zett = generate_funny_zeta(0.5, 100, 44100, 5);
+    // export_wav("zett.wav", zett);
+
+    // vector<float> mixer = mix(test2, test3);
+    // mixer = mix(mixer, zett, 0.7, 0.3);
+    // export_wav("mixing.wav", mixer);
+
 
 }
