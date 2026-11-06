@@ -4,6 +4,7 @@
 #include <complex>
 #include <algorithm>
 using namespace std;
+constexpr double pi = acos(-1.0); 
 
 void process_range(vector<float> &audio_data, float amp = 1){
 

@@ -68,7 +68,7 @@ vector<float> import_wav(){}
 //test function
 vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
     vector<float> data;
-    constexpr double pi = acos(-1.0); 
+    double pi = acos(-1.0); 
     for(int i = 0; i < (rate*dur); i++){
         float a = amplitude * sin((2 * pi * freq) * (i/rate));
         data.push_back(a);
@@ -78,8 +78,13 @@ vector<float> generate_sin(float amplitude, float freq, float rate, float dur){
 
 int main(){
 
-    vector<float> test = generate_funny_zeta(0.5, 440, 44100, 20);
+    vector<float> test = generate_weierstrass(0.5, 440, 44100, 5);
     export_wav("test.wav", test);
 
+    vector<float> test2 = generate_weierstrass(0.5, 220, 44100, 5);
+    export_wav("test2.wav", test2);
+
+    vector<float> test3 = generate_weierstrass(0.5, 880, 44100, 5);
+    export_wav("tes3.wav", test3);
 
 }

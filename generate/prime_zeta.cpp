@@ -6,7 +6,6 @@
 using namespace std;
 
 
-constexpr double pi = acos(-1.0); 
 
 //since we want critical strip (Re(z)<1), need analythic continuation
 complex<double> eta(complex<double> s, int N = 500) {
